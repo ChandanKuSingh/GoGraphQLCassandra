@@ -1,0 +1,28 @@
+type Alert {
+    id: ID!
+    systemWWN: String!
+    status: String!
+    severity: String!
+    type : String!
+    count : Int!
+    lastOccuredTime: String!
+    description: String!
+}
+
+type Query {
+    alerts: [Alert!]!
+}
+
+input NewAlert {
+    systemWWN: String!
+    status: String!
+    severity: String!
+    type : String!
+    count : Int!
+    lastOccuredTime: String!
+    description: String!
+}
+
+type Mutation {
+    createAlert(input: NewAlert!): Alert!
+}
